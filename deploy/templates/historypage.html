@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+   <style>
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+th, td {
+  padding: 3px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
+}
+
+tr:hover {background-color: #D6EEEE;}
+</style>
+
+</head>
+   <body>   
+          <h1>Prediction History</h1>
+      <table border = 1>
+         <thead>
+            <td>Timestamp</td>
+            <td>objectid</td>
+            <td>ra</td>
+            <td>dec</td>
+            <td>u</td>
+            <td>g</td>
+            <td>r</td>
+            <td>i</td>
+            <td>z</td>
+            <td>run</td>
+            <td>camcol</td>
+            <td>field</td>
+            <td>redshift</td>
+            <td>plate</td>       
+            <td>mjd</td>   
+            <td>output</td>  
+         </thead>         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["Timestmp"]}}</td>
+               <td>{{row["objectid"]}}</td>
+               <td>{{row["ra"]}}</td>
+               <td>{{row["dec"]}}</td>
+               <td>{{row["u"]}}</td>
+               <td>{{row["g"]}}</td>
+               <td>{{row["r"]}}</td>
+               <td>{{row["i"]}}</td>
+               <td>{{row["z"]}}</td>
+               <td>{{row["run"]}}</td>
+               <td>{{row["camcol"]}}</td>
+               <td>{{row["field"]}}</td>
+               <td>{{row["redshift"]}}</td>
+               <td>{{row["plate"]}}</td>
+               <td>{{row["mjd"]}}</td>              
+               <td>{{row["output"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>      
+      <a href = "/">Go back to home page</a>      
+   </body>
+</html>
